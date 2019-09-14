@@ -20,7 +20,9 @@
 
         <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <vs-button icon="person_add" type="filled" color="#333" size="large">Adicionar um Associado</vs-button>
+                <router-link to="/add">
+                    <vs-button icon="person_add" type="filled" color="#333" size="large">Adicionar um Associado</vs-button>
+                </router-link>
             </vs-col>
         </vs-row>
       

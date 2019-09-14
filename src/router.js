@@ -4,6 +4,8 @@ import Home from './views/Home'
 
 Vue.use(Router)
 
+const AddUser = () => import(/**/'./views/AddUsuario')
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -17,6 +19,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/add',
+      nome: 'AddUser',
+      component: AddUser
     }
   ]
 })

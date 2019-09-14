@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Crete+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Manjari&display=swap');
 html, body{
     color: #333;
+    font-family: 'Manjari', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Crete Round', serif;
+    text-align: center;
 }
