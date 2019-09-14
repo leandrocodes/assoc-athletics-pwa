@@ -1,6 +1,5 @@
 <template>
   <div class="users">
-
         <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
                 <h1>
@@ -15,13 +14,13 @@
 
         <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <vs-button icon="filter_list" type="relief" color="#333" size="large">Controle de Associados</vs-button>
+                <vs-button icon="assignment" type="filled" color="#333" size="large">Controle de Associados</vs-button>
             </vs-col>
         </vs-row>
 
         <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <vs-button icon="person_add" type="relief" color="#333" size="large">Adicionar um Associado</vs-button>
+                <vs-button icon="person_add" type="filled" color="#333" size="large">Adicionar um Associado</vs-button>
             </vs-col>
         </vs-row>
       
@@ -30,7 +29,12 @@
 
 <script>
 export default {
-
+    beforeCreate(){
+        this.$vs.loading({background:'#333', color:'#f58634'})
+        setTimeout( ()=> {
+             this.$vs.loading.close()
+        }, 3000);
+    }
 }
 </script>
 
