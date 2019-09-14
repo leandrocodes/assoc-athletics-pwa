@@ -46,5 +46,31 @@ export default {
 }
 .vs-button{
     color: #f58634;
+    transition: all .1s ease !important;
 }
+
+@media screen and (min-width: 768px){
+    .users{
+        img{
+            width: 40%
+        }
+    }
+}
+
+@media screen and (min-width: 1366px){
+    .users{
+        img{
+            width: 35%
+        }
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .users{
+        img{
+            width: 25%
+        }
+    }
+}
+
 </style>
