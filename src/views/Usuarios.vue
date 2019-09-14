@@ -1,0 +1,50 @@
+<template>
+  <div class="users">
+
+        <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <h1>
+                    Gerenciamento de Associados
+                </h1>
+            </vs-col>
+
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <img src="../assets/pruu.png" width="70%">
+            </vs-col>
+        </vs-row>
+
+        <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <vs-button icon="filter_list" type="relief" color="#333" size="large">Controle de Associados</vs-button>
+            </vs-col>
+        </vs-row>
+
+        <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <vs-button icon="person_add" type="relief" color="#333" size="large">Adicionar um Associado</vs-button>
+            </vs-col>
+        </vs-row>
+      
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="scss" scoped>
+.users{
+    h1{
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
+.vs-row{
+    margin-top: 20px;
+}
+.vs-button{
+    color: #f58634;
+}
+</style>
