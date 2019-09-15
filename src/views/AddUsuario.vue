@@ -13,7 +13,7 @@
         <form>
             <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <vs-input v-model="usuario.nome" color="#f58634" label="Nome Completo" placeholder="Nome Sobrenome"/>
+                <vs-input v-model="usuario.nomeCompleto" color="#f58634" label="Nome Completo" placeholder="Nome Sobrenome"/>
             </vs-col>
         </vs-row>
 
@@ -112,7 +112,7 @@
                 <vs-radio color="#f58634" v-model="usuario.status" vs-value="Pendente">Pendente</vs-radio>
             </vs-col>
             <vs-col vs-type="flex" vs-w="12">
-                <vs-radio color="#f58634" v-model="usuario.status" vs-value="Noturno">Em dia</vs-radio>            
+                <vs-radio color="#f58634" v-model="usuario.status" vs-value="Em dia">Em dia</vs-radio>            
             </vs-col>
         </vs-row>
 
@@ -142,7 +142,7 @@ export default {
     data() {
         return{
             usuario: {
-                nome:'',
+                nomeCompleto:'',
                 telefone: '',
                 cpf: '',
                 cidade: '',
@@ -161,20 +161,22 @@ export default {
     },
     methods: {
         add() {
-            this.axios.post(`/associados.json`, this.usuario)
-            this.alert = true
-            this.usuario.nome = ''
-            this.usuario.cpf = ''
-            this.usuario.cidade = ''
-            this.usuario.uf = ''
-            this.usuario.endereco = ''
-            this.usuario.complemento = ''
-            this.usuario.email = ''
-            this.usuario.curso = ''
-            this.usuario.turno = ''
-            this.usuario.semestre = 1
-            this.usuario.status = ''
-            this.usuario.rgra = ''
+            this.axios.post(`/associados.json`, this.usuario).then(()=>{
+                console.log(this.usuario.nomeCompleto)
+                this.alert = true
+                this.usuario.nomeCompleto = ''
+                this.usuario.cpf = ''
+                this.usuario.cidade = ''
+                this.usuario.uf = ''
+                this.usuario.endereco = ''
+                this.usuario.complemento = ''
+                this.usuario.email = ''
+                this.usuario.curso = ''
+                this.usuario.turno = ''
+                this.usuario.semestre = 1
+                this.usuario.status = ''
+                this.usuario.rgra = ''
+            })
         }
     },
     beforeCreate(){
