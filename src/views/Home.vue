@@ -84,14 +84,6 @@ export default {
 @media screen and (min-width: 1366px) {
     .users {
         img {
-            width: 35%;
-        }
-    }
-}
-
-@media screen and (min-width: 1920px) {
-    .users {
-        img {
             width: 25%;
         }
     }
