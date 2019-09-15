@@ -180,10 +180,10 @@ export default {
         }
     },
     beforeCreate(){
-        this.$vs.loading({background:'#333', color:'#f58634'})
+        this.$vs.loading({background:'#333', color:'#333'})
         setTimeout( ()=> {
              this.$vs.loading.close()
-        }, 1000);
+        }, 700);
     }
 }
 </script>

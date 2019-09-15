@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
+import AddUser from './views/AddUsuario'
 
 Vue.use(Router)
-
-const AddUser = () => import(/**/'./views/AddUsuario')
 
 export default new Router({
   mode: 'history',
