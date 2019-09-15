@@ -12,12 +12,17 @@
 
         <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <vs-button
-                    icon="assignment"
-                    type="filled"
-                    color="#333"
-                    size="large"
-                >Controle de Associados</vs-button>
+                 <router-link to="/list">
+                    <vs-button
+                        icon="assignment"
+                        type="filled"
+                        color="#333"
+                        size="large"
+                    >
+                        Controle de Associados
+                    </vs-button>
+                 </router-link>
+
             </vs-col>
         </vs-row>
 
@@ -34,8 +39,8 @@
             </vs-col>
         </vs-row>
         <footer>
-            Developed by
-            <a target="_blank" href="https://leandrocodes.com.br">Leandro Viana</a>
+             Developed by
+            <a target="_blank" href="https://leandrocodes.com.br"> © Leandro Viana </a>
             <br />Under
             <a href="https://github.com/leandrocodes/atletica-pruuu">MIT</a> license
         </footer>

@@ -2,16 +2,14 @@
     <div class="add-user">
        <vs-row>
            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                <router-link to="/"><vs-button @click="add" icon="home" type="flat" color="#f58634" size="large">Início</vs-button></router-link>
-                <router-link to="/"><vs-button @click="add" icon="assignment" type="flat" color="#f58634" size="large">Listar</vs-button></router-link>
+                <router-link to="/"><vs-button icon="home" type="flat" color="#f58634" size="large">Início</vs-button></router-link>
+                <router-link to="/list"><vs-button icon="assignment" type="flat" color="#f58634" size="large">Listar</vs-button></router-link>
            </vs-col>
            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
                 <h2>Adicionar Associado</h2>
            </vs-col>
        </vs-row>
-        
 
-    
         <form>
             <vs-row>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import AddUser from './views/AddUsuario'
+import ListUsers from './views/ListUsuarios.vue'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/add',
       nome: 'AddUser',
       component: AddUser
+    },
+    {
+      path: '/list',
+      nome: 'ListUsers',
+      component: ListUsers
     }
   ]
 })
