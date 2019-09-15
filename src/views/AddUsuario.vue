@@ -1,6 +1,16 @@
 <template>
     <div class="add-user">
-        <h2>Adicionar Associado</h2>
+       <vs-row>
+           <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <router-link to="/"><vs-button @click="add" icon="home" type="flat" color="#f58634" size="large">Início</vs-button></router-link>
+                <router-link to="/"><vs-button @click="add" icon="assignment" type="flat" color="#f58634" size="large">Editar</vs-button></router-link>
+           </vs-col>
+           <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                <h2>Adicionar Associado</h2>
+           </vs-col>
+       </vs-row>
+        
+
     
         <form>
             <vs-row>
@@ -108,11 +118,21 @@
             </vs-col>
         </vs-row>
 
-            <vs-row>
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center">
-                    <vs-button @click="add" icon="add_box" type="filled" color="#f58634" size="small">Adicionar</vs-button>
-                </vs-col>
-            </vs-row>
+        <vs-row>
+            <vs-col v-if="alert" vs-type="flex" vs-justify="center" vs-align="center">
+                 <vs-alert :active.sync="alert" color="success" icon="check_circle" closable>
+                    Associado inserido com sucesso!
+                </vs-alert>
+            </vs-col>
+        </vs-row>
+
+        <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center">
+                <vs-button @click="add" icon="add_box" type="filled" color="#f58634" size="small">Adicionar</vs-button>
+            </vs-col>
+        </vs-row>
+
+
 
         </form>
 
@@ -137,13 +157,33 @@ export default {
                 semestre: 1,
                 status: '',
                 rga: ''
-            }
+            },
+            alert: false
         }
     },
     methods: {
         add() {
             this.axios.post(`/usuario.json`, this.usuario)
+            this.alert = true
+            this.usuario.nome = ''
+            this.usuario.cpf = ''
+            this.usuario.cidade = ''
+            this.usuario.uf = ''
+            this.usuario.endereco = ''
+            this.usuario.complemento = ''
+            this.usuario.email = ''
+            this.usuario.curso = ''
+            this.usuario.turno = ''
+            this.usuario.semestre = 1
+            this.usuario.status = ''
+            this.usuario.rgra = ''
         }
+    },
+    beforeCreate(){
+        this.$vs.loading({background:'#333', color:'#f58634'})
+        setTimeout( ()=> {
+             this.$vs.loading.close()
+        }, 1000);
     }
 }
 </script>
