@@ -34,18 +34,20 @@
                         <vs-td :data="tr.status">{{tr.status}}</vs-td>
 
                         <template class="expand-user" slot="expand">
-                            <div class="con-expand-users">
-                                <vs-list>
-                                    <vs-list-item icon="smartphone" title="Telefone" :subtitle="tr.telefone"></vs-list-item>
-                                    <vs-list-item icon="contacts" title="CPF" :subtitle="tr.cpf"></vs-list-item>
-                                    <vs-list-item icon="map" title="Estado" :subtitle="tr.uf"></vs-list-item>
-                                    <vs-list-item icon="my_location" title="Cidade" :subtitle="tr.cidade"></vs-list-item>
-                                    <vs-list-item icon="person_pin" title="Endereço" :subtitle="tr.endereco"></vs-list-item>
-                                    <vs-list-item icon="access_time" title="Turno" :subtitle="tr.turno"></vs-list-item>
-                                    <vs-list-item icon="today" title="Semestre" :subtitle="tr.semestre"></vs-list-item>
-                                    <vs-list-item icon="credit_card" title="RGA" :subtitle="tr.rga"></vs-list-item>
-                                </vs-list>
-                            </div>
+                           <vs-row>
+                                <div class="con-expand-users">
+                                    <vs-list>
+                                        <vs-list-item icon="smartphone" title="Telefone" :subtitle="tr.telefone"></vs-list-item>
+                                        <vs-list-item icon="contacts" title="CPF" :subtitle="tr.cpf"></vs-list-item>
+                                        <vs-list-item icon="map" title="Estado" :subtitle="tr.uf"></vs-list-item>
+                                        <vs-list-item icon="my_location" title="Cidade" :subtitle="tr.cidade"></vs-list-item>
+                                        <vs-list-item icon="person_pin" title="Endereço" :subtitle="tr.endereco"></vs-list-item>
+                                        <vs-list-item icon="access_time" title="Turno" :subtitle="tr.turno"></vs-list-item>
+                                        <vs-list-item icon="today" title="Semestre" :subtitle="tr.semestre"></vs-list-item>
+                                        <vs-list-item icon="credit_card" title="RGA" :subtitle="tr.rga"></vs-list-item>
+                                    </vs-list>
+                                </div>
+                           </vs-row>
                         </template>
                     </vs-tr>
                 </template>
