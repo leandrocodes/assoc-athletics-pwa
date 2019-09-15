@@ -162,7 +162,7 @@ export default {
     methods: {
         add() {
             this.axios.post(`/associados.json`, this.usuario).then(()=>{
-                console.log(this.usuario.nomeCompleto)
+                //console.log(this.usuario.nomeCompleto)
                 this.alert = true
                 this.usuario.nomeCompleto = ''
                 this.usuario.cpf = ''
