@@ -24,7 +24,7 @@
                 </template>
 
                 <template slot-scope="{data}">
-                    <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
+                    <vs-tr :data="tr" :key="uid" v-for="(tr, uid) in data">
                         <vs-td :data="tr.nomeCompleto">{{tr.nomeCompleto}}</vs-td>
 
                         <vs-td :data="tr.curso">{{tr.curso}}</vs-td>
@@ -46,15 +46,25 @@
                                         <vs-list-item icon="today" title="Semestre" :subtitle="tr.semestre"></vs-list-item>
                                         <vs-list-item icon="credit_card" title="RGA" :subtitle="tr.rga"></vs-list-item>
                                     </vs-list>
+                                    <vs-button @click="edit(uid)" color="warning" icon="edit" style="margin-right: 20px;">Editar</vs-button>
+                                    <vs-button @click="confirmar(uid)"  color="danger" icon="delete_forever">Excluir</vs-button>
                                 </div>
                            </vs-row>
                         </template>
                     </vs-tr>
                 </template>
             </vs-table>
-
-            <pre>{{ selected }}</pre>
         </div>
+        <vs-popup class="holamundo"  title="Tem certeza?" :active.sync="popupActive">
+            <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                    <h3>Tem certeza que deseja excluir este cadastro?</h3>
+                </vs-col>
+                <vs-col style="margin-top: 20px" vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                    <vs-button @click="deletar(uid)" color="danger" icon="delete_forever">Deletar</vs-button>
+                </vs-col>
+            </vs-row>
+        </vs-popup>
     </div>
 </template>
 <script>
@@ -76,14 +86,30 @@ export default {
                 status: '',
                 rga: '',
             },
-            usuarios: []
+            usuarios: [],
+            uid: null,
+            popupActive: false
         }
     },
     created() {
         this.axios.get('associados.json').then(res => {
             this.usuarios = res.data
-            console.log(this.usuarios)
         })
+    },
+    methods: {
+        edit(uid) {
+            this.$router.push({ name: 'EditUser', params: {uid} })
+        },
+        deletar(){
+            this.axios.delete(`/associados/${this.uid}.json`).then(()=>{
+                this.popupActive = false
+                this.$router.go()
+            })
+        },
+        confirmar(uid){
+            this.uid = uid
+            this.popupActive = true
+        }
     }
 }
 </script>
