@@ -1,7 +1,7 @@
 {
   "name": "Gerenciamento de Associados - Atlética Pruu",
   "short_name": "atletica-pruuu",
-  "theme_color": "#f58634",
+  "theme_color": "#333",
   "background_color": "#333",
   "display": "standalone",
   "start_url": "./index.html",
